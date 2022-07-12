@@ -13,6 +13,13 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
+          title: "Kids",
+          image:
+            "https://media.istockphoto.com/photos/mother-helping-daughter-fasten-necklace-picture-id171102388?k=20&m=171102388&s=612x612&w=0&h=YRs1fV26T_fBW1aPZTqcXtQQ3oWR3mKflnC-Auzyzyk=",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
           title: "Men",
           image:
             "https://images.unsplash.com/photo-1611099144078-5596e87ef54c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NjZ8fHdhbGxldHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60",

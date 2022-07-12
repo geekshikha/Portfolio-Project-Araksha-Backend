@@ -7,8 +7,7 @@ const { SALT_ROUNDS } = require("../config/constants");
 
 const router = new Router();
 
-
-//login 
+//login
 router.post("/login", async (req, res, next) => {
   try {
     const { email, password } = req.body;
@@ -36,19 +35,20 @@ router.post("/login", async (req, res, next) => {
   }
 });
 
-
 //signup
 router.post("/signup", async (req, res) => {
-  const { email, password, name } = req.body;
-  if (!email || !password || !name) {
+  const { email, password, fullname, phone, address } = req.body;
+  if (!email || !password || !fullname) {
     return res.status(400).send("Please provide an email, password and a name");
   }
 
   try {
     const newUser = await User.create({
+      fullname,
       email,
+      phone,
+      address,
       password: bcrypt.hashSync(password, SALT_ROUNDS),
-      name,
     });
 
     delete newUser.dataValues["password"]; // don't send back the password hash
@@ -71,9 +71,16 @@ router.post("/signup", async (req, res) => {
 // - get the users email & name using only their token
 // - checking if a token is (still) valid
 router.get("/me", authMiddleware, async (req, res) => {
+  // const user = await User.findOne({
+  //   where: { email },
+  // });
+
+  const { id } = req.user;
+
+  const existingUser = await User.findByPk(id);
   // don't send back the password hash
   delete req.user.dataValues["password"];
-  res.status(200).send({ ...req.user.dataValues });
+  res.status(200).send({ ...req.user.dataValues, user: existingUser });
 });
 
 module.exports = router;

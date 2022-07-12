@@ -48,14 +48,14 @@ router.get("/:id", async (req, res, next) => {
 //detail page of device in category
 router.get("/device/:id", async (req, res) => {
   const { id } = req.params;
-  //console.log(id);
+  console.log(id);
 
   if (isNaN(parseInt(id))) {
     return res.status(400).send({ message: "device id is not a number" });
   }
 
   const device = await Device.findByPk(id);
-  //console.log("device", device);
+  console.log("device", device);
 
   if (device === null) {
     return res.status(404).send({ message: "device not found" });

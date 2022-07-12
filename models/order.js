@@ -18,7 +18,18 @@ module.exports = (sequelize, DataTypes) => {
   }
   order.init(
     {
-      total: DataTypes.INTEGER,
+      total: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
+      shippingAddress: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      paymentMethod: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
     },
     {
       sequelize,
