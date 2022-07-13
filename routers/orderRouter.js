@@ -4,7 +4,7 @@ const User = require("../models").user;
 const Category = require("../models").category;
 const Device = require("../models").device;
 const Order = require("../models").order;
-const OrderDevice = require("../models").orderdevice;
+const OrderDevice = require("../models").orderDevice;
 
 const router = new Router();
 
@@ -49,11 +49,20 @@ router.post("/", auth, async (req, res) => {
     console.log("orderId", orderId);
 
     const createOrderDevicesPromises = items.map(async (item) => {
+      console.log(
+        orderId,
+        "this is order id",
+        item.id,
+        "this is id",
+        item.quantity,
+        "this is quantity"
+      );
       const orderDevicePromise = await OrderDevice.create({
+        quantity: item.quantity,
         orderId,
         deviceId: item.id,
-        quantity: item.quantity,
       });
+      console.log(orderDevicePromise, "here");
       return orderDevicePromise;
     });
 
