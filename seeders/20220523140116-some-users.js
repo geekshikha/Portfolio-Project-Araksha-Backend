@@ -18,8 +18,8 @@ module.exports = {
         },
 
         {
-          name: "Hina",
-          email: "hina@hina.com",
+          name: "Shikha",
+          email: "shikha@12.com",
 
           password: bcrypt.hashSync("1234", SALT_ROUNDS),
 
