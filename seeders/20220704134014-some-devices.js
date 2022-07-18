@@ -26,7 +26,7 @@ module.exports = {
           categoryId: 1,
         },
         {
-          title: "Earrings",
+          title: "Earring",
           description: "Elegant Earring",
           price: 224,
           image:
@@ -36,14 +36,34 @@ module.exports = {
           categoryId: 1,
         },
         {
-          title: "Collar",
-          description: "Pretty Collar",
-          price: 224,
+          title: "Bracelet",
+          description: "White Pearl",
+          price: 22,
           image:
-            "https://images.unsplash.com/photo-1610714520720-ba92ae46e0e2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y29sbGFyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
+            "https://media.istockphoto.com/photos/gold-bracelets-accumulation-and-ring-on-a-woman-wrist-wearing-a-white-picture-id1348544609?k=20&m=1348544609&s=612x612&w=0&h=3Q-LiDKLE-xTSn5MroEJOsth-33Mj144W4YCCoSdTyY=",
           createdAt: new Date(),
           updatedAt: new Date(),
-          categoryId: 3,
+          categoryId: 1,
+        },
+        {
+          title: "Pendent",
+          description: "Beautiful • BlueRuby Pendent",
+          price: 224,
+          image:
+            "https://media.istockphoto.com/photos/amulet-of-evil-eye-picture-id1151053898?k=20&m=1151053898&s=612x612&w=0&h=T-uaVtrWI892eyGac3ur6RA7-jU8zy1aJxQFqPTQ8-I=",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+          categoryId: 2,
+        },
+        {
+          title: "Bracelet",
+          description: "Colorful beads",
+          price: 224,
+          image:
+            "https://media.istockphoto.com/photos/childrens-multicolored-manicure-picture-id487745338?k=20&m=487745338&s=612x612&w=0&h=dUVI1y1N4IDfjjVhMvY9g9IX440TAkzuLvpphLtxngY=",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+          categoryId: 2,
         },
         {
           title: "Wallet",
@@ -53,7 +73,57 @@ module.exports = {
             "https://images.unsplash.com/photo-1611099024089-7f57ca9aca7f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fHdhbGxldHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60",
           createdAt: new Date(),
           updatedAt: new Date(),
-          categoryId: 2,
+          categoryId: 3,
+        },
+        {
+          title: "Ring",
+          description: "Nice",
+          price: 224,
+          image:
+            "https://images.unsplash.com/photo-1612285127364-58ede3fa1686?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Njl8fG1lbnMlMjByaW5nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+          categoryId: 3,
+        },
+        {
+          title: "Collar",
+          description: "Pretty • Collar",
+          price: 224,
+          image:
+            "https://images.unsplash.com/photo-1610714520720-ba92ae46e0e2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y29sbGFyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+          categoryId: 4,
+        },
+        {
+          title: "Shoes",
+          description: "Adorable • Shoes ",
+          price: 124,
+          image:
+            "https://media.istockphoto.com/photos/small-french-bulldog-dog-puppy-with-umbrella-and-rain-boots-picture-id1363594241?k=20&m=1363594241&s=612x612&w=0&h=8U1mUdP8wFqM2o-lTfmltJxRBLtlI-XJ2mSNBWA0PPQ=",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+          categoryId: 4,
+        },
+        {
+          title: "Walking Sticks",
+          description: "Easyly Accessable",
+          price: 224,
+          image:
+            "https://images.unsplash.com/photo-1644043975612-5f8176666c88?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjF8fHdhbGtpbmclMjBvbGQlMjBwZXJzb25zJTIwc3RpY2tzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+          categoryId: 5,
+        },
+        {
+          title: "Hiking Sticks",
+          description: "Hike Easily",
+          price: 224,
+          image:
+            "https://images.unsplash.com/photo-1592388748465-8c4dca8dd703?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8d2Fsa2luZyUyMHN0aWNrc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+          categoryId: 5,
         },
       ],
       {}

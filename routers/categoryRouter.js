@@ -2,6 +2,7 @@ const { Router } = require("express");
 const auth = require("../auth/middleware");
 const Category = require("../models").category;
 const Device = require("../models").device;
+const Rating = require("../models").rating;
 
 const router = new Router();
 
@@ -31,7 +32,8 @@ router.get("/:id", async (req, res, next) => {
     }
 
     const categories = await Category.findByPk(id, {
-      include: [Device],
+      // include: [Device],
+      include: [{ model: Device, include: [Rating] }],
     });
     // console.log("category", categories);
 

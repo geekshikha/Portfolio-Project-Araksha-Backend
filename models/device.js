@@ -9,6 +9,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       device.belongsTo(models.category);
+      device.hasMany(models.rating, { foreignKey: "deviceId" });
       //many-to-many
       device.belongsToMany(models.user, {
         through: "userDevices",

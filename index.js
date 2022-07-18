@@ -10,6 +10,7 @@ const { Server } = require("socket.io");
 const authRouter = require("./routers/auth");
 const categoryRouter = require("./routers/categoryRouter");
 const orderRouter = require("./routers/orderRouter");
+const ratingRouter = require("./routers/ratingRouter");
 
 //constants
 const { PORT } = require("./config/constants");
@@ -51,6 +52,7 @@ app.use((req, res, next) => {
 app.use("/auth", authRouter);
 app.use("/category", categoryRouter);
 app.use("/orders", orderRouter);
+app.use("/rating", ratingRouter);
 app.get("/api/config/paypal", (req, res) => {
   res.send(process.env.PAYPAL_CLIENT_ID || "sb");
 });
@@ -72,31 +74,23 @@ app.get("/api/config/paypal", (req, res) => {
 // });
 
 //CONNECTION
-
+let lat = 52.38826077323548;
+let long = 4.824020920666874;
 //CONNECTION
 io.on("connection", (socket) => {
   console.log(`Made socket connection: ${socket.id}`);
 
-  const lat = 52.38826077323548;
-  const long = 4.824020920666874;
-  const changingLat = lat + Math.random() * 0.1;
-  const changingLong = long + Math.random() * 0.1;
+  // const changingLat = lat + Math.random() * 0.1;
+  // const changingLong = long + Math.random() * 0.1;
+
+  let changingLat = lat;
+  let changingLong = long;
 
   setInterval(() => {
     io.to(`clock-room`).emit(`send-location`, changingLat, changingLong);
+    changingLat = changingLat + 0.001;
+    changingLong = changingLong + 0.001;
   }, 10000);
-
-  // socket.emit("send-location", changingLat, changingLong);
-
-  //ROOM
-  // socket.on("join_room", (data) => {
-  //   console.log("JOINED IN ROOM: ", data);
-  //   socket.join(data);
-  // });
-
-  // socket.on("send_message", (data) => {
-  //   socket.to(data.room).emit("receive_message", data);
-  // });
 });
 
 setInterval(() => {
