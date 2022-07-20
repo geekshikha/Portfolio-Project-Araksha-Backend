@@ -1,6 +1,7 @@
 //packages
 const express = require("express");
-const corsMiddleWare = require("cors");
+// const corsMiddleWare = require("cors");
+const cors = require("cors");
 const http = require("http");
 const { Server } = require("socket.io");
 // const io = new Server(server);
@@ -17,7 +18,8 @@ const { PORT } = require("./config/constants");
 
 // Create an express app
 const app = express();
-app.use(corsMiddleWare());
+// app.use(corsMiddleWare());
+app.use(cors());
 app.use(express.json());
 
 const server = http.createServer(app);
